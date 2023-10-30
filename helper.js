@@ -28,6 +28,11 @@ async function updateQuestion(card_id, newQuestion, newAnswer, newDifficulty){
     await dbHelper.makeDbQuery('UPDATE flashcards SET question = ?, answer = ?, difficulty = ? WHERE card_id = ?', [newQuestion, newAnswer, newDifficulty, card_id]);
 }
 
+async function loadAllQuestions() {
+    const queryResult = await dbHelper.makeDbQuery('SELECT * FROM flashcards');
+    return queryResult;
+}
+
 
 module.exports = {
     createUser,
@@ -36,5 +41,6 @@ module.exports = {
     deleteCategory,
     createQuestion,
     deleteQuestion,
-    updateQuestion
+    updateQuestion, 
+    loadAllQuestions
 }   
