@@ -198,3 +198,8 @@
 {"level":"info","message":"POST on /createQuestion?category_id=3&question=was%20ist%20wien&answer=stadt&difficulty=easy by ::1 with status code 200 took 39.895 ms\n"}
 {"level":"info","message":"GET on /deleteQuestion?card_id=6 by ::1 with status code 404 took 3.305 ms\n"}
 {"level":"info","message":"DELETE on /deleteQuestion?card_id=6 by ::1 with status code 200 took 45.573 ms\n"}
+{"level":"info","message":"DELETE on /deleteQuestion?card_id=6 by ::1 with status code 200 took 40.022 ms\n"}
+{"level":"info","message":"DELETE on /deleteQuestion?card_id=6 by ::1 with status code 200 took 1.702 ms\n"}
+{"level":"info","message":"DELETE on /deleteQuestion?card_id=1 by ::1 with status code 200 took 18.702 ms\n"}
+{"level":"info","message":"DELETE on /deleteQuestion?card_id=4 by ::1 with status code 200 took 5.457 ms\n"}
+{"level":"info","message":"DELETE on /deleteQuestion?card_id=10 by ::1 with status code 200 took 21.394 ms\n"}
