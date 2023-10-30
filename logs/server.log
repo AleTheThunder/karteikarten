@@ -203,3 +203,4 @@
 {"level":"info","message":"DELETE on /deleteQuestion?card_id=1 by ::1 with status code 200 took 18.702 ms\n"}
 {"level":"info","message":"DELETE on /deleteQuestion?card_id=4 by ::1 with status code 200 took 5.457 ms\n"}
 {"level":"info","message":"DELETE on /deleteQuestion?card_id=10 by ::1 with status code 200 took 21.394 ms\n"}
+{"level":"info","message":"GET on /updateQuestion?card_id=5&newQuestion=hallo&newAnswer=servus&newDifficulty=easy by ::1 with status code 404 took 1.732 ms\n"}

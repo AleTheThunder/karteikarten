@@ -99,3 +99,17 @@ app.delete('/deleteQuestion', async (req, res) =>
         res.send("Frage löschen hat nicht funktoniert.")
     }
 })
+
+app.post('/updateQuestion', async (req, res) =>
+{
+    try{
+        await helper.updateQuestion(req.query.card_id, req.query.newQuestion, req.query.newAnswer, req.query.newDifficulty)
+        res.status(200)
+        res.send("Frage wurde neu..");
+        
+    }
+    catch(err){
+        res.status(500)
+        res.send("Frage neu hat nicht funktoniert.")
+    }
+})
