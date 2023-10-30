@@ -1,0 +1,33 @@
+-- Beispiel für Kategorien hinzufügen
+INSERT INTO kategorien (name) VALUES 
+    ('Mathematik'),
+    ('Geschichte'),
+    ('Englisch');
+
+-- Beispiel für Karteikarten hinzufügen
+INSERT INTO karteikarten (frage, antwort, bewertung) VALUES 
+    ('Was ist 2 + 2?', '4', 'leicht'),
+    ('Wann wurde der Eiffelturm gebaut?', '1889', 'mittel'),
+    ('Translate "house" into German.', 'Haus', 'mittel');
+
+-- Beispiel für Lernhistorie hinzufügen
+INSERT INTO lernhistorie (card_id, bewertung, gelernt_am) VALUES 
+    (1, 'leicht', '2023-10-30 10:00:00'),
+    (2, 'mittel', '2023-10-30 11:30:00'),
+    (3, 'mittel', '2023-10-30 13:45:00');
+
+-- Beispiel für Streak aktualisieren
+UPDATE streak
+SET tage = CASE
+    WHEN end_datum = CURDATE() THEN tage + 1
+    ELSE 1
+END,
+end_datum = CURDATE()
+ORDER BY streak_id DESC
+LIMIT 1;
+
+-- Beispiel für Benutzer hinzufügen
+INSERT INTO benutzer (benutzername, passwort) VALUES ('neuer_benutzer', 'hashed_password');
+
+-- Benutzer löschen
+DELETE FROM benutzer WHERE benutzername = 'neuer_benutzer';

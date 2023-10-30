@@ -1,0 +1,38 @@
+-- Verbindung zur Datenbank herstellen
+CREATE DATABASE IF NOT EXISTS karteikarten_db;
+USE karteikarten_db;
+
+-- Tabellen erstellen
+CREATE TABLE IF NOT EXISTS benutzer (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    benutzername VARCHAR(50) UNIQUE,
+    passwort VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS karteikarten (
+    card_id INT PRIMARY KEY AUTO_INCREMENT,
+    frage TEXT,
+    antwort TEXT,
+    bewertung ENUM('leicht', 'mittel', 'schwer')
+);
+
+CREATE TABLE IF NOT EXISTS kategorien (
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    name TEXT
+);
+
+CREATE TABLE IF NOT EXISTS lernhistorie (
+    history_id INT PRIMARY KEY AUTO_INCREMENT,
+    card_id INT,
+    bewertung ENUM('leicht', 'mittel', 'schwer'),
+    gelernt_am DATETIME,
+    FOREIGN KEY (card_id) REFERENCES karteikarten(card_id)
+);
+
+CREATE TABLE IF NOT EXISTS streak (
+    streak_id INT PRIMARY KEY AUTO_INCREMENT,
+    start_datum DATE,
+    end_datum DATE,
+    tage INT
+);
+

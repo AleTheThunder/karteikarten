@@ -1,0 +1,24 @@
+{
+  "name": "newflyinghour",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+      "autocannon": "^7.11.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "helper": "^0.0.13",
+    "http": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "winston": "^3.8.2"
+  }
+}
