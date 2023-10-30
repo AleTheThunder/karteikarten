@@ -24,6 +24,10 @@ async function deleteQuestion(card_id){
     await dbHelper.makeDbQuery('DELETE FROM flashcards WHERE card_id = ?', [card_id]);
 }
 
+async function updateQuestion(card_id, newQuestion, newAnswer, newDifficulty){
+    await dbHelper.makeDbQuery('UPDATE flashcards SET question = ?, answer = ?, difficulty = ? WHERE card_id = ?', [newQuestion, newAnswer, newDifficulty, card_id]);
+}
+
 
 module.exports = {
     createUser,
@@ -31,5 +35,6 @@ module.exports = {
     createCategory,
     deleteCategory,
     createQuestion,
-    deleteQuestion
+    deleteQuestion,
+    updateQuestion
 }   
