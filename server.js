@@ -113,3 +113,40 @@ app.post('/updateQuestion', async (req, res) =>
         res.send("Frage neu hat nicht funktoniert.")
     }
 })
+
+app.get('/loadAllQuestions', async (req, res) =>
+{
+    try{
+        let response = await helper.loadAllQuestions()
+        res.status(200)
+        res.send(response);
+        
+    }
+    catch(err){
+        res.status(500)
+        res.send("Frage neu hat nicht funktoniert.")
+    }
+})
+
+app.get('/loadQuestionsForCategory', async (req, res) => {
+    try {
+        const questions = await helper.loadQuestionsForCategory(req.query.user_id, req.query.category_id);
+
+        res.status(200).send(questions);
+    } catch (err) {
+        res.status(500).send("Fragen konnten nicht geladen werden.");
+    }
+});
+
+app.get('/loadQuestionsByDifficulty', async (req, res) => {
+    try {
+        const user_id = req.body.user_id; 
+        const difficulty = req.body.difficulty; 
+
+        const questions = await helper.loadQuestionsByDifficulty(user_id, difficulty);
+
+        res.status(200).send(questions);
+    } catch (err) {
+        res.status(500).send("Fragen konnten nicht geladen werden.");
+    }
+});

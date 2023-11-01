@@ -33,6 +33,16 @@ async function loadAllQuestions() {
     return queryResult;
 }
 
+async function loadQuestionsForCategory(user_id, category_id) {
+    const queryResult = await dbHelper.makeDbQuery('SELECT * FROM flashcards WHERE user_id = ? AND category_id = ?', [user_id, category_id]);
+    return queryResult;
+}
+
+async function loadQuestionsByDifficulty(user_id, difficulty) {
+    const queryResult = await dbHelper.makeDbQuery('SELECT * FROM flashcards WHERE user_id = ? AND difficulty = ?', [user_id, difficulty]);
+    return queryResult;
+}
+
 
 module.exports = {
     createUser,
@@ -42,5 +52,7 @@ module.exports = {
     createQuestion,
     deleteQuestion,
     updateQuestion, 
-    loadAllQuestions
+    loadAllQuestions,
+    loadQuestionsForCategory,
+    loadQuestionsByDifficulty
 }   
